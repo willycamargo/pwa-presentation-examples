@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>01 - Web Workers</title>
+  
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./pi.js"></script>
+  <script type="module" src="./script.js"></script>
+</head>
+
+<body>
+  <figure id="jolly">
+    <img src="./img/jolly.jpeg" width="100" />
+  </figure>
+
+  <div>
+    <button id="btnmain">
+      Generate PI!
+    </button>
+    
+    <button id="btnworker">
+      Generate PI in a Worker!
+    </button>
+  </div>
+
+  <pre id="pi-result"></pre>
+</body>
+
+</html>

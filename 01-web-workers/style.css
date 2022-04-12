@@ -1,0 +1,14 @@
+
+#pi-result {
+  display: block;
+  white-space: pre-wrap;
+  max-width: 100%;
+  word-break: break-all;
+  margin: 1em;
+}
+
+#jolly,
+#jolly img {
+  display: inline-block;
+  font-size: 4em;
+}
