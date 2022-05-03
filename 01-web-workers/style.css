@@ -1,14 +1,35 @@
-
-#pi-result {
-  display: block;
-  white-space: pre-wrap;
-  max-width: 100%;
-  word-break: break-all;
-  margin: 1em;
+.container {
+  width: calc(100vw - 2rem);
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
-#jolly,
-#jolly img {
+.image {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image img {
   display: inline-block;
   font-size: 4em;
+}
+
+.button {
+  flex: 1;
+  min-width: 250px;
+  margin-top: 1rem;
+}
+
+.result {
+  display: block;
+  white-space: pre-wrap;
+  width: 100%;
+  word-break: break-all;
+  margin: 1em;
 }

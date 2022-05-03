@@ -167,7 +167,7 @@ function pi(numDec) {
   return tempPI.slice(0, numDec);
 }
 
-onmessage = (e) => {
+self.addEventListener("message", (e) => {
   const result = pi(e.data);
-  postMessage(result);
-}
+  self.postMessage(result);
+})

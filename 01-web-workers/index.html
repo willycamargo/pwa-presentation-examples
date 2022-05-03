@@ -13,21 +13,23 @@
 </head>
 
 <body>
-  <figure id="jolly">
-    <img src="./img/jolly.jpeg" width="100" />
-  </figure>
-
-  <div>
-    <button id="btnmain">
-      Generate PI!
-    </button>
+  <div class="container">
+    <figure class="image">
+      <img id="jolly" src="./img/jolly.jpeg" width="100" />
+    </figure>
     
-    <button id="btnworker">
-      Generate PI in a Worker!
-    </button>
+    <div>
+      <button id="btnmain" class="button">
+        Generate PI!
+      </button>
+    
+      <button id="btnworker" class="button">
+        Generate PI in a Worker!
+      </button>
+    </div>
+    
+    <pre id="result" class="result"></pre>
   </div>
-
-  <pre id="pi-result"></pre>
 </body>
 
 </html>
