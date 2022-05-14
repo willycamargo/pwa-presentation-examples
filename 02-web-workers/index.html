@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>01 - Web Workers</title>
+  <title>02 - Web Workers</title>
   
   <link rel="stylesheet" href="./style.css">
-  <script type="module" src="./pi.js"></script>
+  <script type="module" src="./csv-insights.js"></script>
   <script type="module" src="./script.js"></script>
 </head>
 
@@ -17,24 +17,32 @@
     <figure class="image">
       <img id="jolly" src="./img/jolly.png" width="300" />
     </figure>
-    
+
     <div class="actions">
       <button id="btn-rotate" class="button">
         Rotate Jollies
       </button>
     </div>
-    
+
+    <div class="file-container">
+      <label class="file-label" id="file-label">Drop Orders CSV here</label>
+      <input class="file-input" type="file" accept=".csv" id="file-input" />
+    </div>
+
     <div class="actions">
-      <button id="btn-main" class="button">
-        Generate PI!
+      <button class="button" type="button" id="btn-main">
+        Generate Insights
       </button>
-    
-      <button id="btn-worker" class="button">
-        Generate PI in a Worker!
+
+      <button class="button" type="button" id="btn-worker">
+        Generate Insights
       </button>
     </div>
-    
-    <pre id="result" class="result"></pre>
+
+    <div id="result" class="result">
+
+    </div>
+
   </div>
 </body>
 
