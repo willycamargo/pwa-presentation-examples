@@ -8,6 +8,7 @@
   <title>02 - Web Workers</title>
   
   <link rel="stylesheet" href="./style.css">
+  <script async src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
   <script type="module" src="./csv-insights.js"></script>
   <script type="module" src="./script.js"></script>
 </head>
@@ -25,24 +26,25 @@
     </div>
 
     <div class="file-container">
-      <label class="file-label" id="file-label">Drop Orders CSV here</label>
+      <label class="file-label" id="file-label">Select Orders File (CSV format)</label>
       <input class="file-input" type="file" accept=".csv" id="file-input" />
     </div>
 
     <div class="actions">
       <button class="button" type="button" id="btn-main">
-        Generate Insights
+        Generate Report
       </button>
 
       <button class="button" type="button" id="btn-worker">
-        Generate Insights
+        Generate Report With Worker
       </button>
     </div>
 
-    <div id="result" class="result">
+    <br />
 
-    </div>
-
+    <div id="status"></div>
+    <canvas id="result" class="result" width="800" height="400">
+    </canvas>
   </div>
 </body>
 

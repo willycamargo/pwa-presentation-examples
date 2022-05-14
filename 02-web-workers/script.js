@@ -1,3 +1,48 @@
+let chart = null
+
+function renderChart({ label, labels, data }) {
+  if (chart) {
+    chart.destroy()
+    chart = null
+  }
+
+  const ctx = document.getElementById('result').getContext('2d');
+  chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        label,
+        data,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+}
+
 // Spin the jolly
 document.getElementById('btn-rotate').addEventListener('click', (e) => {
   e.target.setAttribute('disabled', true)
@@ -16,10 +61,14 @@ document.getElementById('file-input').addEventListener('change', (e) => {
 
 // Regular btn event listener
 document.getElementById('btn-main').addEventListener('click', async () => {
-  document.getElementById('result').textContent = `working...`
+  document.getElementById('status').textContent = 'working...'
   const result = await window.csvInsights(file)
-  console.log('result -> ', result)
-  // document.getElementById('result').textContent = `File parsed. ${insights.count} rows found.`
+  renderChart({
+    label: 'Sum of Orders US$',
+    labels: result.monthlyReport.map((m) => m.month),
+    data: result.monthlyReport.map((m) => m.sum),
+  })
+  document.getElementById('status').textContent = ''
 })
 
 
@@ -33,12 +82,17 @@ document.getElementById('btn-worker').addEventListener('click', (e) => {
     return
   }
 
-  document.getElementById('result').textContent = `working...`
+  document.getElementById('status').textContent = 'working...'
 
   csvJSONWorker.postMessage({ file: file })
   csvJSONWorker.addEventListener('message', (e) => {
     const result = e.data
-    console.log('result -> ', result)
-    // document.getElementById('result').textContent = `File parsed. ${result.count} rows found.`
+    renderChart({
+      label: 'Sum of Orders US$',
+      labels: result.monthlyReport.map((m) => m.month),
+      data: result.monthlyReport.map((m) => m.sum),
+    })
+    document.getElementById('status').textContent = ''
   })
+
 })
