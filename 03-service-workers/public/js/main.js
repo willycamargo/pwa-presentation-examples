@@ -51,6 +51,8 @@ const createUserElement = (post) => {
   $userImg.setAttribute('height', 120)
   $userFigure.append($userImg)
 
+  handleImageError($userImg)
+
   return $user
 }
 
@@ -93,6 +95,8 @@ const createUserInfoElement = (username) => {
   $userInfoImage.setAttribute('width', 120)
   $userInfoImage.setAttribute('height', 120)
   $userInfoFigure.append($userInfoImage)
+
+  handleImageError($userInfoImage)
 
   const $userInfoName = document.createElement('h4')
   $userInfoName.classList.add('user-info__name')
@@ -171,6 +175,14 @@ const createPostDetailModal = (post, $target) => {
 /**
  * Handlers
  */
+const handleImageError = ($imgElement) => {
+  $imgElement.addEventListener('error', () => {
+    if ($imgElement.dataset.error) return
+    $imgElement.setAttribute('src', '/img/avatar.png')
+    $imgElement.dataset.error = true
+  })
+}
+
 const showPostDetail = async (post) => {
   const postDetailModal = createPostDetailModal(post, document.body)
   postDetailModal.open()
@@ -223,7 +235,6 @@ const setupUser = () => {
   const username = localStorage.getItem('username') || generateNickname()
   localStorage.setItem('username', username)
   const $userInfo = createUserInfoElement(username)
-
   document.getElementById('user-info-container').append($userInfo)
 }
 
@@ -234,16 +245,6 @@ const renderPostsTimeline = async () => {
     addPostToPage(currentPost)
   }
 }
-
-// const setupPostDetailModal = () => {
-
-//   // close modal onClick
-//   document.querySelectorAll('[data-modal-close]').forEach(el => {
-//     el.addEventListener('click', () => {
-//       el.closest('.modal').classList.remove('modal--open')
-//     })
-//   })
-// }
 
 // Initialize
 setupUser()
