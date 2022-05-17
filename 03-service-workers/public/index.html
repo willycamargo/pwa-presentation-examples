@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post It</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head> 
+
+<body>
+  <div class="container">
+    <header class="header">
+      <figure class="logo">
+        <picture>
+          <source srcset="img/logo.svg" media="(min-width: 990px)">
+          <source srcset="img/logo-medium.svg" media="(min-width: 400px)">
+          <img srcset="img/logo-small.svg" alt="Post It!">
+        </picture>
+      </figure>
+      
+      <div id="user-info-container">
+        <!-- User info is added via Javascript -->
+      </div>
+    </header>
+
+    <form class="form" id="form-posts">
+      <div class="form__field">
+        <input required type="text" name="title" class="form__field__input" placeholder="Title">
+        <textarea required type="text" name="content" class="form__field__textarea" placeholder="Content"></textarea>
+        <button type="submit" class="form__button">Post it!</button>
+      </div>
+    </form>
+
+    <div class="posts-container">
+      <main class="posts-section">
+        <div class="posts-section__list" id="list-posts">
+          <!-- Posts are added via Javascript -->
+        </div>
+      </main>
+    </div>
+  </div>
+  <script type="module" src="js/generate-nickname.js"></script>
+  <script type="module" src="js/main.js"></script>
+  </div>
+</body>
