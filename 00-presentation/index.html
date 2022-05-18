@@ -1,0 +1,306 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/moon.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">				
+				<!-- Slide 00 -->
+				<section>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="390" height="146"
+						baseProfile="full" enable-background="new 0 0 1952 734.93" version="1.1" viewBox="0 0 1952 734.93"
+						xml:space="preserve" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;">
+						<g>
+							<path fill="#FFF" fill-opacity="1" stroke-linejoin="round" stroke-width=".2"
+								d="M 1436.62,603.304L 1493.01,460.705L 1655.83,460.705L 1578.56,244.39L 1675.2,0.000528336L 1952,734.933L 1747.87,734.933L 1700.57,603.304L 1436.62,603.304 Z" />
+							<path fill="#5A0FC8" fill-opacity="1" stroke-linejoin="round" stroke-width=".2"
+								d="M 1262.47,734.935L 1558.79,0.00156593L 1362.34,0.0025425L 1159.64,474.933L 1015.5,0.00351906L 864.499,0.00351906L 709.731,474.933L 600.585,258.517L 501.812,562.819L 602.096,734.935L 795.427,734.935L 935.284,309.025L 1068.63,734.935L 1262.47,734.935 Z" />
+							<path fill="#FFF" fill-opacity="1" stroke-linejoin="round" stroke-width=".2"
+								d="M 186.476,482.643L 307.479,482.643C 344.133,482.643 376.772,478.552 405.396,470.37L 436.689,373.962L 524.148,104.516C 517.484,93.9535 509.876,83.9667 501.324,74.5569C 456.419,24.852 390.719,0.000406265 304.222,0.000406265L -3.8147e-006,0.000406265L -3.8147e-006,734.933L 186.476,734.933L 186.476,482.643 Z M 346.642,169.079C 364.182,186.732 372.951,210.355 372.951,239.95C 372.951,269.772 365.238,293.424 349.813,310.906C 332.903,330.331 301.766,340.043 256.404,340.043L 186.476,340.043L 186.476,142.598L 256.918,142.598C 299.195,142.598 329.103,151.425 346.642,169.079 Z" />
+						</g>
+					</svg>
+					<h3>Progressive Web App <br /> Overview</h3>
+				</section>
+				
+				<!-- Slide 01 -->
+				<section>
+					<section>
+						<h2>What is a PWA?</h2>
+						<p>
+							Progressive Web Apps are <em>web apps</em> that use specific <em>web-platform features</em> in combination with <em>progressive enhancement</em> to give users an experience on par with native apps.
+						</p>
+					</section>
+
+					<section>
+						<h2>Progressive enhancement</h2>
+					
+						<blockquote>
+							Progressive enhancement is a design philosophy that provides a baseline of essential content and functionality to as many users as possible, while delivering the best possible experience only to users of the most modern browsers that can run all the required code. - <a href="https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement" target="_blank">MDN</a>
+						</blockquote>
+					
+						<ul>
+							<li class="fragment">
+								Provide a simpler-but-still-usable experience for users of older browsers and devices with limited capabilities
+							</li>
+							<li class="fragment">
+								Progresses the user experience up to a more-compelling, fully-featured experience for users of newer browsers and devices with richer capabilities
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Web-platform features</h2>
+					
+						<p class="fragment">
+							Service Workers
+						</p>
+						<p class="fragment">
+							Web Manifests
+						</p>
+						<p class="fragment">
+							Optional Enhancements: push notifications, native share, device vibration, camera, geolocation, local database (IndexedDB), and others.
+						</p>
+					</section>
+
+					<section>
+						<h3 class="fragment"><u>Advantages</u></h3>
+						
+						<p class="fragment">
+							Offline mode
+						</p>
+						<p class="fragment">
+							Improved performance
+						</p>
+						<p class="fragment">
+							App store independent
+						</p>
+						<p class="fragment">
+							We can build it on top of an existing web application
+						</p>
+
+						<h3 class="fragment" style="margin-top:4rem;"><u>Disadvantages</u></h3>
+						<p class="fragment">
+							Compatibility limitation (iOS)
+						</p>
+						<p class="fragment">
+							Can't do everything
+						</p>
+						<p class="fragment">
+							Users are not used to it
+						</p>
+					</section>
+
+				</section>
+				
+				<!-- Slide 02 -->
+				<section data-transition="zoom-out slide-in">
+					<h2>Web-platform features</h2>
+				
+					<p class="fragment highlight-green">
+						Service Workers
+					</p>
+					<p>
+						Web Manifests
+					</p>
+				</section>
+				
+				<!-- Slide 04 -->
+				<section data-transition="zoom-in slide-out">
+					<section>
+						<h2>Service Workers</h2>
+						<p>
+							Service Worker is a type of <em>Web Worker</em> that acts <em>intercepting network requests</em>, <em>handling caches</em>, and <em>delivering push messages</em>.
+						</p>
+					</section>
+				</section>
+				
+				<!-- Slide 05 -->
+				<section>					
+					<section>
+						<h3>Web Workers</h3>
+
+						<blockquote>
+							Web Workers are a simple means for web content to run scripts in background threads. The worker thread can perform tasks without interfering with the user interface. - <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers">MDN</a>
+						</blockquote>
+					</section>
+
+					<section data-transition="slide-in fade-out">
+						<h3>Web Workers</h3>
+						<div class="r-stack">
+							<img src="./img/web-workers-01.png" height="430" />
+							<img class="fragment" src="./img/web-workers-02.png" height="430" />
+						</div>
+					</section>
+
+					<section data-transition="slide-in fade-out">
+						<h3>Web Workers - Generate PI</h3>
+						<a class="text-small" href="https://willycamargo.github.io/pwa-presentation-examples/01-web-workers/"
+							target="_blank">Generate Pi - examples/01-web-workers</a>
+						<img class="fragment" src="./img/web-workers-03.png" height="430" />
+					</section>
+
+					<section data-transition="fade-in fade-out">
+						<h3>Web Workers - Generate PI</h3>
+						
+						<p>script.js</p>
+						<pre><code data-trim data-line-numbers="all|1-8|10-11|13-17|19-20|22-31|26|28-30">
+						// Spin the jollies
+						document.getElementById('btn-rotate').addEventListener('click', (e) => {
+							e.target.setAttribute('disabled', true)
+							let rotation = 0
+							setInterval(() => {
+								document.getElementById('jolly').style.transform = `rotate(${rotation += 2}deg)`
+							}, 10)
+						})
+
+						// Generate Pi
+						const pi = (n) => { /* generate pi */ }
+
+						// Attatch the regular event listener
+						document.getElementById('btn-main').addEventListener('click', () => {
+							document.getElementById('result').textContent = 'working...'
+							document.getElementById('result').textContent = pi(30000)
+						})
+
+						// Initialize the Worker
+						const piWorker = new Worker('pi-worker.js')
+
+						// Attatch the event listener for using the worker
+						document.getElementById('btn-worker').addEventListener('click', () => {
+							document.getElementById('result').textContent = 'working...'
+
+							piWorker.postMessage(30000)
+
+							piWorker.addEventListener('message', (e) => {
+								document.getElementById('result').textContent = e.data
+							})
+						})
+						</code></pre>
+					</section>
+
+					<section data-transition="fade-in slide-out">
+						<h3>Web Workers - Generate PI</h3>
+
+						<p>pi-worker.js</p>
+						<pre><code data-trim data-line-numbers="all">
+						// Generate Pi
+						const pi = (n) => { /* generate pi */ }
+						
+						// Listen for message
+						self.addEventListener("message", (e) => {
+							const result = pi(e.data);
+							self.postMessage(result);
+						})
+						</code></pre>
+					</section>
+
+					<section data-transition="fade-in slide-out">
+						<p>But...</p>
+						<p class="r-fit-text fragment">Who wants to calculate PI?</p>
+						<p class="r-fit-text fragment">What is a realistic use case for Web Workers?</p>
+					</section>
+
+					<section data-transition="slide-in fade-out">
+						<h3>Web Workers - Data Analysis</h3>
+						<a class="text-small" href="https://willycamargo.github.io/pwa-presentation-examples/02-web-workers/"
+							target="_blank">Data Analysis - examples/02-web-workers</a>
+						<img class="fragment" src="./img/web-workers-04.png" height="430" />
+					</section>
+
+					<section data-transition="fade-in fade-out">
+						<h3>Web Workers - Data Analysis</h3>
+						
+						<p>script.js</p>
+						<pre><code data-trim data-line-numbers="all|1-8|10-15|17-18|20-26|28-29|31-42|35|37-41">
+						// Spin the jollies
+						document.getElementById('btn-rotate').addEventListener('click', (e) => {
+							e.target.setAttribute('disabled', true)
+							let rotation = 0
+							setInterval(() => {
+								document.getElementById('jolly').style.transform = `rotate(${rotation += 2}deg)`
+							}, 10)
+						})
+
+						// File Field event listener
+						let file = ''
+						document.getElementById('file-input').addEventListener('change', (e) => {
+							file = e.target.files[0]
+							document.getElementById('file-label').innerText = file.name
+						})
+
+						// Generate report function
+						const generateReportFromCSV = async (file) => {/* read file and generate report */}
+
+						// Attatch the regular event listener
+						document.getElementById('btn-main').addEventListener('click', async () => {
+							document.getElementById('status').textContent = 'working...'
+							const result = await generateReportFromCSV(file)
+							renderChart(result)
+							document.getElementById('status').textContent = ''
+						})
+
+						// Initialize the Worker
+						const csvReportWorker = new Worker('csv-report-worker.js')
+
+						// Attatch the event listener for using the worker
+						document.getElementById('btn-worker').addEventListener('click', (e) => {
+							document.getElementById('status').textContent = 'working...'
+
+							csvReportWorker.postMessage({ file: file })
+							
+							csvReportWorker.addEventListener('message', (e) => {
+								const result = e.data
+								renderChart(result)
+								document.getElementById('status').textContent = ''
+							})
+						})
+						</code></pre>
+					</section>
+
+					<section data-transition="fade-in slide-out">
+						<h3>Web Workers - Data Analysis</h3>
+
+						<p>csv-report-worker.js</p>
+						<pre><code data-trim>
+						// Generate report
+						const generateReportFromCSV = async (file) => {/* read file and generate report */}
+						
+						// Listen for message
+						self.addEventListener("message", async (e) => {
+							const result = await generateReportFromCSV(e.data);
+							self.postMessage(result);
+						})
+						</code></pre>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
