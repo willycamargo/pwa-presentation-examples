@@ -164,7 +164,7 @@ function pi(numDec) {
   const t2 = new Date();
   const timeTaken = (t2.getTime() - t1.getTime()) / 1000;
   // console.log("It took: " + timeTaken + " seconds");
-  return tempPI.slice(0, numDec);
+  return '3.' + tempPI.slice(0, numDec).slice(1);
 }
 
 window.pi = pi

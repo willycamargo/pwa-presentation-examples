@@ -12,7 +12,7 @@ document.getElementById('btn-rotate').addEventListener('click', (e) => {
 // Attatch the regular event listener
 document.getElementById('btn-main').addEventListener('click', () => {
   document.getElementById('result').textContent = 'working...'
-  document.getElementById('result').textContent = '3.' + window.pi(30000).slice(1)
+  document.getElementById('result').textContent = window.pi(30000)
 })
 
 // Initialize the Worker
@@ -20,16 +20,11 @@ const piWorker = new Worker('pi-worker.js')
 
 // Attatch the event listener for using the worker
 document.getElementById('btn-worker').addEventListener('click', () => {
-  if (!window.Worker) {
-    document.getElementById('result').textContent = 'Web worker not supported'
-    return
-  }
-
   document.getElementById('result').textContent = 'working...'
 
   piWorker.postMessage(30000)
 
   piWorker.addEventListener('message', (e) => {
-    document.getElementById('result').textContent = '3.' + e.data
+    document.getElementById('result').textContent = e.data
   })
 })
