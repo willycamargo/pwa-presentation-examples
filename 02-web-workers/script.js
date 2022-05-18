@@ -15,7 +15,7 @@ function renderChart(result) {
     data: {
       labels: labels,
       datasets: [{
-        label: 'Sum of Orders US',
+        label: 'Sum of Orders USD',
         data: data,
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
