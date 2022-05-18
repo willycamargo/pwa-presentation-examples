@@ -60,7 +60,7 @@ function generateYearlyReport(items) {
 }
 
 
-async function csvInsights(file) {
+async function generateReportFromCSV(file) {
   const csv = await getFileContent(file)
   const items = convertCsvToJson(csv)
 
@@ -75,4 +75,4 @@ async function csvInsights(file) {
   };
 }
 
-window.csvInsights = csvInsights;
+window.generateReportFromCSV = generateReportFromCSV;

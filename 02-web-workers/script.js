@@ -1,19 +1,22 @@
 let chart = null
 
-function renderChart({ label, labels, data }) {
+function renderChart(result) {
   if (chart) {
     chart.destroy()
     chart = null
   }
 
+  const labels = result.monthlyReport.map((m) => m.month)
+  const data = result.monthlyReport.map((m) => m.sum)
+
   const ctx = document.getElementById('result').getContext('2d');
   chart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels,
+      labels: labels,
       datasets: [{
-        label,
-        data,
+        label: 'Sum of Orders US',
+        data: data,
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -62,37 +65,23 @@ document.getElementById('file-input').addEventListener('change', (e) => {
 // Regular btn event listener
 document.getElementById('btn-main').addEventListener('click', async () => {
   document.getElementById('status').textContent = 'working...'
-  const result = await window.csvInsights(file)
-  renderChart({
-    label: 'Sum of Orders US$',
-    labels: result.monthlyReport.map((m) => m.month),
-    data: result.monthlyReport.map((m) => m.sum),
-  })
+  const result = await window.generateReportFromCSV(file)
+  renderChart(result)
   document.getElementById('status').textContent = ''
 })
 
 
 // Initialize the Worker
-const csvJSONWorker = new Worker('csv-insights-worker.js')
+const csvReportWorker = new Worker('csv-report-worker.js')
 
 // Attatch the event listener for using the worker
 document.getElementById('btn-worker').addEventListener('click', (e) => {
-  if (!window.Worker) {
-    window.alert('Web worker not supported')
-    return
-  }
-
   document.getElementById('status').textContent = 'working...'
 
-  csvJSONWorker.postMessage({ file: file })
-  csvJSONWorker.addEventListener('message', (e) => {
+  csvReportWorker.postMessage({ file: file })
+  csvReportWorker.addEventListener('message', (e) => {
     const result = e.data
-    renderChart({
-      label: 'Sum of Orders US$',
-      labels: result.monthlyReport.map((m) => m.month),
-      data: result.monthlyReport.map((m) => m.sum),
-    })
+    renderChart(result)
     document.getElementById('status').textContent = ''
   })
-
 })
