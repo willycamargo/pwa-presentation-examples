@@ -30,7 +30,8 @@
 								d="M 186.476,482.643L 307.479,482.643C 344.133,482.643 376.772,478.552 405.396,470.37L 436.689,373.962L 524.148,104.516C 517.484,93.9535 509.876,83.9667 501.324,74.5569C 456.419,24.852 390.719,0.000406265 304.222,0.000406265L -3.8147e-006,0.000406265L -3.8147e-006,734.933L 186.476,734.933L 186.476,482.643 Z M 346.642,169.079C 364.182,186.732 372.951,210.355 372.951,239.95C 372.951,269.772 365.238,293.424 349.813,310.906C 332.903,330.331 301.766,340.043 256.404,340.043L 186.476,340.043L 186.476,142.598L 256.918,142.598C 299.195,142.598 329.103,151.425 346.642,169.079 Z" />
 						</g>
 					</svg>
-					<h3>Progressive Web App <br /> Overview</h3>
+					<h3>Progressive Web App Overview</h3>
+					<h2 class="fragment">Part 1</h2>
 				</section>
 				
 				<!-- Slide 01 -->
@@ -74,7 +75,7 @@
 					</section>
 
 					<section>
-						<h3 class="fragment"><u>Advantages</u></h3>
+						<h3 class="fragment"><u>Upsides</u></h3>
 						
 						<p class="fragment">
 							Offline mode
@@ -89,7 +90,7 @@
 							We can build it on top of an existing web application
 						</p>
 
-						<h3 class="fragment" style="margin-top:4rem;"><u>Disadvantages</u></h3>
+						<h3 class="fragment" style="margin-top:4rem;"><u>Downsides</u></h3>
 						<p class="fragment">
 							Compatibility limitation (iOS)
 						</p>
@@ -101,6 +102,25 @@
 						</p>
 					</section>
 
+					<section>
+						<h3>PWA Examples</h3>
+					
+						<p>
+							<a href="https://app.starbucks.com/" target="_blank">app.starbucks.com</a>
+						</p>
+						<p>
+							<a href="https://bmw.com/" target="_blank">bmw.com</a>
+						</p>
+						<p>
+							<a href="https://twitter.com/" target="_blank">twitter.com</a>
+						</p>
+						<p>
+							<a href="https://pinterest.com/" target="_blank">pinterest.com</a>
+						</p>
+						<p>
+							<a href="https://2048game.com/" target="_blank">2048game.com</a>
+						</p>
+					</section>
 				</section>
 				
 				<!-- Slide 02 -->
@@ -124,7 +144,7 @@
 						</p>
 					</section>
 				</section>
-				
+
 				<!-- Slide 05 -->
 				<section>					
 					<section>
@@ -215,12 +235,32 @@
 						<h3>Web Workers - Data Analysis</h3>
 						<a class="text-small" href="https://willycamargo.github.io/pwa-presentation-examples/02-web-workers/"
 							target="_blank">Data Analysis - examples/02-web-workers</a>
-						<img class="fragment" src="./img/web-workers-04.png" height="430" />
+						
+						<div class="r-stack">
+							<div>
+								<p>orders.csv</p>
+								<pre><code data-trim>
+									"id","total","created_at"
+									"42e7c2c0-b5a7-4ec7-a406-aef94b78fae1",41.95,"2020-01-05T07:28:54.703Z"
+									"b54d8c4f-a1f7-4079-a142-b0908bb26bf7",778.34,"2020-12-20T23:02:54.434Z"
+									"0f5538b7-4ab8-405d-ad88-218ecfd9143a",116.62,"2020-05-21T14:28:10.448Z"
+									"f7f3d8f8-129e-4d56-9095-a7f864d783d6",559.8,"2020-10-31T01:05:23.160Z"
+									"90901bd1-d02a-4c9c-b257-450edaae215b",160.48,"2021-01-30T00:59:50.798Z"
+									"28473453-205a-4b35-9d7b-2efe0781dc5d",513.36,"2020-08-10T07:53:47.837Z"
+									"c5b4b4e9-be3f-40aa-91d6-fa67e7bf3b2e",94.76,"2020-09-06T09:28:25.774Z"
+									"1480e2ad-0c39-41db-9413-b146f3ceba1a",59.7,"2020-08-12T21:12:36.028Z"
+									"d2dc6d6f-38b3-4c0a-8f3d-b397deda65af",612.44,"2020-05-18T11:09:42.958Z"
+									"66a54672-3b44-41ab-8bc1-72c22146ee34",576.1,"2021-12-11T10:27:03.245Z"
+								</code></pre>
+							</div>
+							
+							<img class="fragment" src="./img/web-workers-04.png" height="430" />
+						</div>
 					</section>
 
 					<section data-transition="fade-in fade-out">
 						<h3>Web Workers - Data Analysis</h3>
-						
+
 						<p>script.js</p>
 						<pre><code data-trim data-line-numbers="all|1-8|10-15|17-18|20-26|28-29|31-42|35|37-41">
 						// Spin the jollies
@@ -282,6 +322,97 @@
 							self.postMessage(result);
 						})
 						</code></pre>
+					</section>
+
+					<section>
+						<h4>With Web Workers...</h4>
+						
+						<h3 class="fragment"><u>We can</u></h3>
+					
+						<p class="fragment">
+							We can do compute intensive things
+						</p>
+
+						<p class="fragment">
+							We can do AJAX calls
+						</p>
+
+						<p class="fragment">
+							We can use WebSocket
+						</p>
+
+						<p class="fragment">
+							We can read and parse files
+						</p>
+
+						<p class="fragment">
+							and more...
+						</p>
+
+						<h3 class="fragment"><u>We cannot</u></h3>
+
+						<p class="fragment">
+							We cannot access the DOM
+						</p>
+					</section>
+
+					<section>
+						<h3>Web Workers - Recommended links</h3>
+						<ul>
+							<li>
+								<a href="https://surma.dev/things/when-workers/" target="_blank">
+									When should you be using Web Workers?
+								</a>
+								- Article
+							</li>
+
+							<li>
+								<a href="https://github.com/GoogleChromeLabs/comlink" target="_blank">
+									Comlink
+								</a>
+								- Library that removes the mental barrier of thinking about postMessage and hides the fact that you are working with workers.
+							</li>
+
+							<li>
+								<a href="https://github.com/BuilderIO/partytown" target="_blank">
+									Partytown
+								</a>
+								- Library that relocate resource intensive third-party scripts off of the main thread and into a web worker.
+							</li>
+							
+							<li>
+								<a href="https://github.com/neomjs/neo" target="_blank">
+									neo.mjs
+								</a>
+								- Web Worker driven frontend framework to create multithreaded Web Apps
+							</li>
+						</ul>
+					</section>
+				</section>
+				
+				<!-- Slide 04 -->
+				<section data-transition="zoom-in slide-out">
+					<section>
+						<h2>Service Workers</h2>
+						<p>
+							What makes Service Workers special?
+						</p>
+					</section>
+
+					<section>
+						<h2>Service Workers</h2>
+						<div class="r-stack">
+							<img src="./img/service-workers-01.png" height="430" />
+							<img class="fragment" src="./img/service-workers-02.png" height="430" />
+							<img class="fragment" src="./img/service-workers-03.png" height="430" />
+						</div>
+					</section>
+
+					<section>
+						<h2>Service Workers</h2>
+						<p>
+							Let's do some coding
+						</p>
 					</section>
 				</section>
 			</div>
