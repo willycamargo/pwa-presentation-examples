@@ -93,7 +93,6 @@ textarea {
 .form__field {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
 }
 
 .form__field__input,
@@ -103,6 +102,7 @@ textarea {
   border-radius: 3px;
   padding: 0.5rem;
   border: 1px solid var(--color-black);
+  margin-bottom: 1rem;
 }
 
 .form__field__textarea {
@@ -131,13 +131,12 @@ textarea {
 .posts-container {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 30px;
-  gap: 30px;
 }
 
 .posts-section {
   flex: 1;
   min-width: 250px;
+  margin-bottom: 1.5rem;
 }
 
 .posts-section__text {

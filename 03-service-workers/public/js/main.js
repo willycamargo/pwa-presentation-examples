@@ -1,11 +1,15 @@
 import { generateNickname } from "./generate-nickname.js"
-const API_URL = '' // empty because it's running at the same server
+
+// service worker register
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js')
+}
 
 /**
  * API Functions
  */
 const createPost = async (post) => {
-  await fetch(`${API_URL}/posts`, {
+  await fetch('/posts', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -15,13 +19,13 @@ const createPost = async (post) => {
 }
 
 const getPosts = async () => {
-  const response = await fetch(`${API_URL}/posts`)
+  const response = await fetch('/posts')
   const posts = await response.json()
   return posts
 }
 
 const getPostDetail = async (id) => {
-  const response = await fetch(`${API_URL}/posts/${id}`)
+  const response = await fetch(`/posts/${id}`)
   const post = await response.json()
   return post
 }

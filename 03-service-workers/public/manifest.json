@@ -1,0 +1,44 @@
+{
+  "name": "Post It, just another blogging platform",
+  "short_name": "Post It",
+  "description": "The best place to post and read just like the other platforms",
+  "start_url": "./?utm_source=pwa",
+  "theme_color": "#ffc252",
+  "scope": "./",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "img/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "img/icons/icon-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "src": "img/icons/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "img/screenshots/01.png",
+      "sizes": "750x1334",
+      "type": "image/png"
+    },
+    {
+      "src": "img/screenshots/02.png",
+      "sizes": "750x1334",
+      "type": "image/png"
+    },
+    {
+      "src": "img/screenshots/03.png",
+      "sizes": "750x1334",
+      "type": "image/png"
+    }
+  ]
+}
