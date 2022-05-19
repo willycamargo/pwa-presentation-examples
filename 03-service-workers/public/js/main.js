@@ -151,25 +151,31 @@ const createPostDetailModal = (post, $target) => {
   
   const open = () => {
     $postDetailModal.classList.add('modal--open')
+    document.body.classList.add('scroll-disabled')
   }
 
   const close = () => {
     $postDetailModal.classList.remove('modal--open')
+    document.body.classList.remove('scroll-disabled')
     setTimeout(() => {
       $target.removeChild($postDetailModal)
-    })
+    }, 1000)
   }
 
   // events
   $modalHeaderBackButton.addEventListener('click', close)
   $modalHeaderCloseButton.addEventListener('click', close)
 
-  return {
-    $element: $postDetailModal,
-    setContent,
-    open,
-    close,
-  }
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        $element: $postDetailModal,
+        setContent,
+        open,
+        close,
+      })
+    }, 1)
+  })
 }
 
 /**
@@ -184,7 +190,7 @@ const handleImageError = ($imgElement) => {
 }
 
 const showPostDetail = async (post) => {
-  const postDetailModal = createPostDetailModal(post, document.body)
+  const postDetailModal = await createPostDetailModal(post, document.body)
   postDetailModal.open()
   const postDetail = await getPostDetail(post.id)
   postDetailModal.setContent(postDetail.content)
