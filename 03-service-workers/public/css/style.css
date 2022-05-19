@@ -6,6 +6,11 @@
   --layer-modal: 1;
 }
 
+/* Utils */
+.scroll-disabled {
+  overflow: hidden;
+}
+
 /* Base */
 * {
   font-family: 'Inter', sans-serif;
@@ -214,8 +219,9 @@ textarea {
 .modal__overlay {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: transparent;
   opacity: 0;
+  transition-delay: 5ms;
   transition: opacity 200ms;
 }
 
@@ -234,13 +240,12 @@ textarea {
   width: 100%;
   height: 100%;
   padding: 1rem;
-  opacity: 0;
-  transition: all 200ms;
+  transition-duration: 400ms;
+  transition-property: all;
 }
 
 .modal--open .modal__container {
   transform: translateX(-50%) translateY(-50%);
-  opacity: 1;
 }
 
 .modal__header {
@@ -276,11 +281,18 @@ textarea {
 }
 
 @media screen and (min-width: 600px) {
+  .modal__overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
   .modal__container {
     transform: scale(0.98) translateX(-50%) translateY(-50%);
     max-width: 500px;
     max-height: 500px;
     border-radius: 5px;
+    opacity: 0;
+    transition-duration: 200ms;
+    transition-property: all;
   }
 
   .modal--open .modal__container {
