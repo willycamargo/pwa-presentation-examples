@@ -9,12 +9,15 @@ const port = 3000
 app.use(express.json())
 app.use(cors())
 
-// Posts DB
+// DB
 const adapter = new JSONFile('./db.json')
 const db = new Low(adapter)
 await db.read()
 db.data ||= { posts: [] }
 const { posts } = db.data
+
+// Delay Util
+const delay = async (time) => new Promise((resolve) => setTimeout(resolve, time))
 
 // Routes
 app.get('/status', async (req, res, next) => {
@@ -23,6 +26,7 @@ app.get('/status', async (req, res, next) => {
 
 app.get('/posts/:id', async (req, res) => {
   const post = posts.find((p) => p.id == req.params.id)
+  await delay(1000)
   res.send(post)
 })
 
