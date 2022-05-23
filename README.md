@@ -21,6 +21,8 @@ If you need, there are a list of CSV Files available that you can use to test th
 
 ## [03-service-workers](./03-service-workers)
 
+<img alt="02-web-workers" src="./img/03-service-workers.png" width="350" />
+
 This folder contains the App that we used to implement the Web App Manifest and the Service Worker. You can check the commit with the code we did during the presentation here: [084b53d](https://github.com/willycamargo/pwa-presentation-examples/commit/084b53d842ed73099f7a9b1b57c88d15682f02f6)
 
 Unfortunately, this project requires a server to run, so it's not available to be accessed directly via browser. So, you need to run it locally.
